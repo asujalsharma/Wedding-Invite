@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #F8F9FA;
+    color: #243447;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom watercolor paper texture effect */
+.watercolor-bg {
+  background-color: #FDFCFA;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(225, 237, 245, 0.4) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(244, 233, 211, 0.35) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(196, 220, 237, 0.3) 0px, transparent 60%);
+}
+
+.paper-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(196, 220, 237, 0.4);
+  box-shadow: 0 10px 30px -5px rgba(50, 80, 110, 0.08), 0 4px 10px -2px rgba(50, 80, 110, 0.04);
+}
+
+.luxury-border {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* 3D perspective for gates and envelopes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Subtle gold foil shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-foil {
+  background: linear-gradient(135deg, #A27B38 0%, #D4AF37 25%, #FFF4D0 50%, #D4AF37 75%, #8B6526 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Floating animation */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+/* Envelope flap styling */
+.envelope-shadow {
+  box-shadow: 0 25px 50px -12px rgba(61, 123, 170, 0.25), 0 0 0 1px rgba(115, 178, 217, 0.2);
+}
