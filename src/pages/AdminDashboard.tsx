@@ -119,16 +119,16 @@ export const AdminDashboard: React.FC = () => {
   // If not logged in, show Login Screen
   if (!token) {
     return (
-      <div className="min-h-screen bg-[#F0F6FA] flex items-center justify-center p-4">
-        <div className="w-full max-w-md bg-white rounded-3xl p-8 border border-[#C4DCED] shadow-xl">
-          <div className="w-12 h-12 rounded-2xl bg-[#E1EDF5] text-[#3D7BAA] flex items-center justify-center mx-auto mb-4">
+      <div className="min-h-screen bg-[#FAF7F0] flex items-center justify-center p-4">
+        <div className="w-full max-w-md bg-[#FFFDF9] rounded-3xl p-8 border border-[#D4AF37]/45 shadow-xl">
+          <div className="w-12 h-12 rounded-2xl bg-[#FAF3E0] text-[#7E152D] border border-[#D4AF37]/40 flex items-center justify-center mx-auto mb-4">
             <Lock className="w-6 h-6" />
           </div>
-          <h2 className="text-2xl font-serif text-center font-bold text-[#1F3C55]">
-            Wedding Host Admin
+          <h2 className="text-2xl font-serif text-center font-bold text-[#5C0D1E]">
+            Wedding Host Portal
           </h2>
-          <p className="text-xs text-center text-gray-500 mt-1 mb-6">
-            Log in to manage Uday & Priti's wedding invitation
+          <p className="text-xs text-center text-[#8C6718] mt-1 mb-6">
+            Log in to manage Uday & Priti's royal wedding invitation
           </p>
 
           {loginError && (
@@ -147,7 +147,7 @@ export const AdminDashboard: React.FC = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-[#73B2D9] focus:outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-[#D4AF37] focus:outline-none"
               />
             </div>
 
@@ -160,21 +160,21 @@ export const AdminDashboard: React.FC = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-[#73B2D9] focus:outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:border-[#D4AF37] focus:outline-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={loginLoading}
-              className="w-full py-3 rounded-full bg-gradient-to-r from-[#5297C7] to-[#3D7BAA] text-white text-xs uppercase tracking-widest font-semibold shadow-md hover:shadow-lg transition-all"
+              className="w-full py-3 rounded-full bg-gradient-to-r from-[#7E152D] to-[#9E243F] hover:from-[#5C0D1E] hover:to-[#7E152D] text-white text-xs uppercase tracking-widest font-semibold shadow-md hover:shadow-lg border border-[#D4AF37]/50 transition-all"
             >
               {loginLoading ? 'Signing In...' : 'Sign In to Portal'}
             </button>
           </form>
 
-          <div className="mt-6 p-3 bg-gray-50 rounded-xl border border-gray-100 text-[11px] text-gray-500 text-center">
-            Default credentials: <span className="font-mono text-[#3D7BAA]">admin@wedding.com</span> / <span className="font-mono text-[#3D7BAA]">weddingadmin123</span>
+          <div className="mt-6 p-3 bg-[#FAF5EB] rounded-xl border border-[#D4AF37]/25 text-[11px] text-[#8C6718] text-center">
+            Default credentials: <span className="font-mono text-[#7E152D]">admin@wedding.com</span> / <span className="font-mono text-[#7E152D]">weddingadmin123</span>
           </div>
         </div>
       </div>
@@ -183,26 +183,26 @@ export const AdminDashboard: React.FC = () => {
 
   if (!invitation) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F0F6FA]">
-        <RefreshCw className="w-8 h-8 text-[#5297C7] animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-[#FAF7F0]">
+        <RefreshCw className="w-8 h-8 text-[#B8860B] animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#F4F7F9] text-gray-800 pb-20">
+    <div className="min-h-screen bg-[#FAF7F0] text-gray-800 pb-20">
       {/* Top Navbar */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#D4AF37]/30 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-[#E1EDF5] text-[#3D7BAA] flex items-center justify-center font-bold font-serif">
+          <div className="w-9 h-9 rounded-xl bg-[#FAF3E0] text-[#7E152D] border border-[#D4AF37]/40 flex items-center justify-center font-bold font-serif">
             UP
           </div>
           <div>
-            <h1 className="font-serif text-lg font-bold text-[#1F3C55]">
-              {invitation.partnerOne} & {invitation.partnerTwo} — Invitation Suite
+            <h1 className="font-serif text-lg font-bold text-[#5C0D1E]">
+              {invitation.partnerOne} & {invitation.partnerTwo} — Royal Invitation Suite
             </h1>
             <p className="text-[11px] text-gray-500">
-              Live link: <a href={`/${invitation.slug}`} target="_blank" rel="noreferrer" className="text-[#5297C7] underline">/{invitation.slug}</a>
+              Live link: <a href={`/${invitation.slug}`} target="_blank" rel="noreferrer" className="text-[#7E152D] underline font-medium">/{invitation.slug}</a>
             </p>
           </div>
         </div>
@@ -210,16 +210,16 @@ export const AdminDashboard: React.FC = () => {
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={() => setShowPreviewModal(true)}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#E1EDF5] text-[#2A5171] hover:bg-[#C4DCED] text-xs font-medium transition-all"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#FAF3E0] text-[#7E152D] hover:bg-[#F3E6C4] border border-[#D4AF37]/35 text-xs font-semibold transition-all"
           >
-            <Smartphone className="w-3.5 h-3.5" />
+            <Smartphone className="w-3.5 h-3.5 text-[#B8860B]" />
             <span className="hidden sm:inline">Mobile Preview</span>
           </button>
 
           <button
             onClick={handleSaveInvitation}
             disabled={loading}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#5297C7] hover:bg-[#3D7BAA] text-white text-xs font-semibold shadow-sm transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#7E152D] to-[#9E243F] hover:from-[#5C0D1E] hover:to-[#7E152D] text-white text-xs font-semibold shadow-sm border border-[#D4AF37]/50 transition-all"
           >
             {saveSuccess ? (
               <>
@@ -228,7 +228,7 @@ export const AdminDashboard: React.FC = () => {
               </>
             ) : (
               <>
-                <Save className="w-3.5 h-3.5" />
+                <Save className="w-3.5 h-3.5 text-[#FDE68A]" />
                 <span>Save Changes</span>
               </>
             )}
@@ -248,7 +248,7 @@ export const AdminDashboard: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
         
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-2 border-b border-gray-200 pb-3 mb-8 overflow-x-auto">
+        <div className="flex items-center gap-2 border-b border-[#D4AF37]/25 pb-3 mb-8 overflow-x-auto">
           {[
             { id: 'content', label: 'Couple & Invitation', icon: Calendar },
             { id: 'events', label: 'Ceremony Schedule', icon: Calendar },
@@ -261,13 +261,13 @@ export const AdminDashboard: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
                   active
-                    ? 'bg-[#1F3C55] text-white shadow-sm'
-                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                    ? 'bg-[#7E152D] text-white shadow-sm border border-[#D4AF37]/50'
+                    : 'bg-[#FFFDF9] text-[#5C0D1E] hover:bg-[#FAF3E0] border border-[#D4AF37]/35'
                 }`}
               >
-                <Icon className="w-3.5 h-3.5" />
+                <Icon className="w-3.5 h-3.5 text-[#B8860B]" />
                 <span>{tab.label}</span>
               </button>
             );

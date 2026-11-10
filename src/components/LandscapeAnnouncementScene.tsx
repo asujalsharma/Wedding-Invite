@@ -57,8 +57,9 @@ export const LandscapeAnnouncementScene: React.FC<Props> = ({
       {/* Floating Rose & Marigold Petals Layer */}
       <FloatingPetals count={14} />
 
-      {/* Soft Vignette & Royal Sandalwood gradient overlay for warmth & readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F0]/40 via-transparent to-[#FAF7F0]/85 pointer-events-none" />
+      {/* Cinematic Dark Vignette Overlay for Crisp Readability & Contrast */}
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/75 pointer-events-none" />
 
       {/* Auspicious Sanskrit Invocation Header */}
       <motion.div
@@ -67,12 +68,12 @@ export const LandscapeAnnouncementScene: React.FC<Props> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 1 }}
       >
-        <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#FFFDF9]/95 backdrop-blur-md border border-[#D4AF37]/60 shadow-[0_4px_20px_rgba(126,21,45,0.12)]">
-          <span className="text-[#D4AF37] text-xs">卐</span>
+        <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#FFFDF8] border-2 border-[#D4AF37] shadow-[0_4px_25px_rgba(0,0,0,0.35)]">
+          <span className="text-[#B8860B] text-xs">卐</span>
           <span className="text-xs sm:text-sm font-devanagari font-bold text-[#7E152D] tracking-widest">
             ॥ श्री गणेशाय नमः ॥
           </span>
-          <span className="text-[#D4AF37] text-xs">卐</span>
+          <span className="text-[#B8860B] text-xs">卐</span>
         </div>
       </motion.div>
 
@@ -83,48 +84,48 @@ export const LandscapeAnnouncementScene: React.FC<Props> = ({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="relative p-8 sm:p-11 rounded-t-[130px] sm:rounded-t-[170px] rounded-b-3xl bg-[#FFFDF9]/92 backdrop-blur-md border-2 border-[#D4AF37]/50 shadow-[0_25px_60px_rgba(92,13,30,0.22)] flex flex-col items-center">
+        <div className="relative p-7 sm:p-10 rounded-t-[140px] sm:rounded-t-[180px] rounded-b-3xl bg-[#FFFDF8] border-2 border-[#D4AF37] shadow-[0_25px_70px_rgba(0,0,0,0.55)] flex flex-col items-center w-full">
           
           {/* Ornate Gold Filigree Inner Border Accent */}
-          <div className="absolute inset-2.5 rounded-t-[120px] sm:rounded-t-[160px] rounded-b-2xl border border-dashed border-[#D4AF37]/35 pointer-events-none" />
+          <div className="absolute inset-2.5 rounded-t-[130px] sm:rounded-t-[170px] rounded-b-2xl border border-dashed border-[#D4AF37]/50 pointer-events-none" />
 
           {/* Sacred Ganesha Emblem Medallion */}
-          <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#FFF7E6] to-[#FAF1D6] border-2 border-[#D4AF37] shadow-md flex items-center justify-center mb-3 text-[#7E152D] relative">
-            <SacredGaneshaIcon className="w-9 h-9 text-[#B8860B]" />
-            <div className="absolute inset-1 rounded-full border border-[#D4AF37]/40 pointer-events-none" />
+          <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#7E152D] to-[#9E243F] border-2 border-[#D4AF37] shadow-lg flex items-center justify-center mb-2.5 relative">
+            <SacredGaneshaIcon className="w-9 h-9 text-[#FDE68A]" />
+            <div className="absolute inset-1 rounded-full border border-[#D4AF37]/50 pointer-events-none" />
           </div>
 
-          {/* Auspicious Shubh Vivah Tag */}
-          <span className="text-[11px] font-sans uppercase tracking-[0.35em] text-[#B8860B] font-semibold mb-1">
+          {/* Auspicious Shubh Vivah Tag in High-Contrast Gold Pill */}
+          <span className="text-[11px] font-sans uppercase tracking-[0.25em] text-[#7E152D] font-bold bg-[#FAF2DE] border border-[#D4AF37]/70 px-4 py-1 rounded-full mb-1.5 shadow-2xs">
             शुभ विवाह • Save the Date
           </span>
 
           {/* Decorative Gold & Floral Divider */}
-          <div className="flex items-center gap-3 mb-2 opacity-90">
-            <span className="h-[1px] w-10 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+          <div className="flex items-center gap-3 mb-1.5 opacity-90">
+            <span className="h-[1px] w-12 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
             <span className="text-xs text-[#B8860B]">✦</span>
-            <span className="h-[1px] w-10 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+            <span className="h-[1px] w-12 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
           </div>
 
-          {/* Couple's Names in Romantic Royal Typography */}
-          <h1 className="text-4xl sm:text-6xl font-cursive text-[#5C0D1E] tracking-wide leading-tight py-1 drop-shadow-sm">
+          {/* Couple's Names in Romantic Royal Typography - Deep Royal Maroon for High Contrast */}
+          <h1 className="text-4xl sm:text-6xl font-cursive text-[#4A0815] tracking-wide leading-tight py-1 font-bold">
             {partnerOne} & {partnerTwo}
           </h1>
 
           {/* Announcement Subtitle */}
-          <p className="mt-2 text-base sm:text-lg font-serif italic text-[#7E152D] tracking-wider">
+          <p className="mt-1 text-base sm:text-lg font-serif italic text-[#5C0D1E] font-medium tracking-wide">
             {announcementText}
           </p>
 
           {/* Refined Traditional Auspicious Date & Venue */}
-          <div className="mt-5 pt-4 border-t border-[#D4AF37]/35 flex flex-col items-center">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-[#8B6508] font-medium font-sans">
+          <div className="mt-4 pt-3.5 border-t border-[#D4AF37]/40 flex flex-col items-center w-full">
+            <span className="text-[11px] uppercase tracking-[0.22em] text-[#7E152D] font-bold font-sans">
               Solicit your gracious presence & blessings on
             </span>
-            <span className="mt-1 text-base sm:text-lg font-serif font-bold text-[#5C0D1E] tracking-wide">
+            <span className="mt-1 text-base sm:text-lg font-serif font-bold text-[#4A0815] tracking-wide">
               {weddingDate}
             </span>
-            <span className="text-xs text-[#9E243F] font-serif italic mt-0.5 font-medium">
+            <span className="text-xs text-[#5C0D1E] font-serif font-semibold mt-1">
               Shri Radhey Paradise Marriage Garden • Gwalior (M.P.)
             </span>
           </div>
@@ -134,7 +135,7 @@ export const LandscapeAnnouncementScene: React.FC<Props> = ({
             onClick={handleProceed}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="mt-6 flex items-center gap-2.5 px-8 py-3 rounded-full bg-gradient-to-r from-[#7E152D] via-[#9E243F] to-[#7E152D] text-[#FFFDF9] font-sans text-xs uppercase tracking-[0.2em] font-semibold shadow-lg hover:shadow-[#7E152D]/40 border border-[#D4AF37]/50 transition-all duration-300"
+            className="mt-6 flex items-center gap-2.5 px-8 py-3 rounded-full bg-gradient-to-r from-[#7E152D] via-[#9E243F] to-[#7E152D] text-[#FFFDF9] font-sans text-xs uppercase tracking-[0.2em] font-semibold shadow-lg hover:shadow-[#7E152D]/40 border border-[#D4AF37]/60 transition-all duration-300"
           >
             <Mail className="w-4 h-4 text-[#FDE68A]" />
             <span>Open Auspicious Invitation</span>
@@ -150,10 +151,10 @@ export const LandscapeAnnouncementScene: React.FC<Props> = ({
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
       >
-        <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#7E152D] font-medium opacity-90 mb-1">
+        <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-white font-semibold drop-shadow-md mb-1">
           Proceed to Invitation Details
         </span>
-        <ChevronDown className="w-4 h-4 text-[#7E152D] animate-bounce" />
+        <ChevronDown className="w-4 h-4 text-white drop-shadow-md animate-bounce" />
       </motion.div>
     </div>
   );
