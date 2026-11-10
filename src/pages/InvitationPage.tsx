@@ -10,6 +10,7 @@ import { EnvelopeLetterScene } from '../components/EnvelopeLetterScene';
 import { CountdownSection } from '../components/CountdownSection';
 import { WeddingFunctionsSection } from '../components/WeddingFunctionsSection';
 import { VenueSection } from '../components/VenueSection';
+import { GallerySection } from '../components/GallerySection';
 import { ClosingSection } from '../components/ClosingSection';
 
 export const InvitationPage: React.FC = () => {
@@ -39,18 +40,18 @@ export const InvitationPage: React.FC = () => {
           partnerOne: 'Uday',
           partnerTwo: 'Priti',
           weddingDate: '2026-11-25T17:00:00.000Z',
-          announcementText: 'are getting married!',
-          letterHeading: "You're invited!",
-          letterBody: "Dear Friends and Family,\n\nAs we get ready to say 'I do,' we feel grateful for the wonderful people in our lives.\n\nYour support means the world to us, and we would be honored to have you with us as we begin our life together.",
-          letterSignoff: "With love,\nUday & Priti",
+          announcementText: 'cordially invite you to celebrate their auspicious wedding union',
+          letterHeading: "॥ शुभ विवाह ॥ You're Cordially Invited",
+          letterBody: "With the divine blessings of Lord Ganesha and our elders, we joyfully invite you to celebrate the wedding ceremony of Uday & Priti.\n\nYour gracious presence and heartfelt blessings will add boundless joy and sanctity as we unite in holy matrimony.",
+          letterSignoff: "With love & respect,\nUday & Priti",
           venue: {
             name: "Shri Radhey Paradise Marriage Garden",
-            tagline: "Wedding & Reception Venue",
+            tagline: "Royal Wedding & Reception Venue",
             address: "Near Hazira Mallgaddha Police Station, Mau, Bhadroli Road",
             city: "Gwalior (M.P.)",
             mapUrl: "https://maps.google.com/?q=Shri+Radhey+Paradise+Marriage+Garden+Gwalior",
             details: "The Baraat procession will depart on Wednesday, November 25, 2026 at 8:30 PM from Hazira Mallgaddha Police Station towards Shri Radhey Paradise Marriage Garden.",
-            image: "/assets/venue_villa.jpg"
+            image: "/assets/indian_marriage_garden_venue.jpg"
           },
           functions: [
             {
@@ -62,9 +63,9 @@ export const InvitationPage: React.FC = () => {
               venue: 'Residence Courtyard',
               address: 'Gwalior (M.P.)',
               dressCode: 'Festive Ethnic Yellow & Traditional',
-              description: 'The auspicious commencement of the wedding rituals with sacred Mandap Puja and family prayers.',
+              description: 'The auspicious commencement of the wedding rituals with sacred Mandap Puja, Kalash Sthapana and family prayers.',
               icon: 'Sun',
-              image: '/assets/rings_stationery.jpg'
+              image: '/assets/indian_mandap_ceremony.jpg'
             },
             {
               id: 'func-panigrahan',
@@ -74,10 +75,10 @@ export const InvitationPage: React.FC = () => {
               time: 'Evening Auspicious Muhurat',
               venue: 'Shri Radhey Paradise Marriage Garden',
               address: 'Near Hazira Mallgaddha Police Station, Mau, Bhadroli Road, Gwalior (M.P.)',
-              dressCode: 'Royal Traditional Festive Attire',
-              description: 'Join us as Uday & Priti take the sacred seven vows (Saat Phere) and unite in eternal matrimony.',
+              dressCode: 'Royal Traditional Festive Attire (Sherwani & Lehengas)',
+              description: 'Join us as Uday & Priti take the sacred seven vows (Saat Phere) around the holy fire and unite in eternal Vedic matrimony.',
               icon: 'Heart',
-              image: '/assets/couple_terrace.jpg'
+              image: '/assets/indian_panigrahan_saat_phere.jpg'
             },
             {
               id: 'func-aashirwad',
@@ -87,10 +88,10 @@ export const InvitationPage: React.FC = () => {
               time: '7:00 PM onwards till your arrival',
               venue: 'Shri Radhey Paradise Marriage Garden',
               address: 'Near Hazira Mallgaddha Police Station, Mau, Bhadroli Road, Gwalior (M.P.)',
-              dressCode: 'Evening Formal / Festive Elegance',
-              description: 'Shower your heartfelt blessings upon the newlyweds and join us for a celebratory dinner feast.',
+              dressCode: 'Evening Festive Royal / Traditional Elegance',
+              description: 'Shower your heartfelt blessings upon the newlyweds and join us for a grand celebratory royal dinner feast.',
               icon: 'Sparkles',
-              image: '/assets/lake_arch_scenic.jpg'
+              image: '/assets/indian_reception_celebration.jpg'
             },
             {
               id: 'func-vadhu-aagman',
@@ -101,54 +102,60 @@ export const InvitationPage: React.FC = () => {
               venue: 'Residence Courtyard',
               address: 'Gwalior (M.P.)',
               dressCode: 'Traditional Indian Elegance',
-              description: 'A warm and affectionate welcome into the family home as Priti steps into her new life.',
+              description: 'A warm and affectionate welcome into the family home as Priti steps into her new life with auspicious Griha Pravesh rituals.',
               icon: 'Flower2',
-              image: '/assets/couple_terrace.jpg'
+              image: '/assets/indian_vadhu_aagman.jpg'
             }
           ],
           gallery: [
             {
               id: 'gal-1',
-              url: '/assets/couple_terrace.jpg',
-              caption: 'Sunset on the Lake Terrace — Uday & Priti',
-              category: 'Portraits'
+              url: '/assets/indian_panigrahan_saat_phere.jpg',
+              caption: 'Sacred Seven Vows & Panigrahan Sanskar — Uday & Priti',
+              category: 'Saat Phere'
             },
             {
               id: 'gal-2',
-              url: '/assets/lake_arch_scenic.jpg',
-              caption: 'Framed by Stone Arches and Quiet Waters',
-              category: 'Scenery'
+              url: '/assets/indian_wedding_palace_scenic.jpg',
+              caption: 'Royal Palace Jharokha & Sandstone Courtyard',
+              category: 'Royal Heritage'
             },
             {
               id: 'gal-3',
-              url: '/assets/rings_stationery.jpg',
-              caption: 'The Rings & Handcrafted Botanical Invitation',
-              category: 'Details'
+              url: '/assets/indian_mandap_ceremony.jpg',
+              caption: 'Auspicious Vedic Mandap & Sacred Havan Kund',
+              category: 'Mandap'
             },
             {
               id: 'gal-4',
-              url: '/assets/venue_villa.jpg',
-              caption: 'Villa del Lago Estate & Lakeside Promenades',
-              category: 'Venue'
+              url: '/assets/indian_reception_celebration.jpg',
+              caption: 'Grand Illuminated Evening Reception Stage',
+              category: 'Preetibhoj'
             },
             {
               id: 'gal-5',
-              url: '/assets/garden_gate.jpg',
-              caption: 'The Garden Gate Opening to Forever',
-              category: 'Gate'
+              url: '/assets/indian_marriage_garden_venue.jpg',
+              caption: 'Shri Radhey Paradise Marriage Garden Lawn',
+              category: 'Venue'
+            },
+            {
+              id: 'gal-6',
+              url: '/assets/indian_vadhu_aagman.jpg',
+              caption: 'Auspicious Griha Pravesh & Traditional Welcome',
+              category: 'Vadhu Aagman'
             }
           ],
           musicTrack: {
-            title: 'Romantic Piano & Strings Serenade',
-            artist: 'Classical Ensemble',
+            title: 'Sacred Shehnai & Sitar Melody',
+            artist: 'Vedic Raga Ensemble',
             url: '',
             enabled: true
           },
           palette: {
-            primary: '#73B2D9',
-            secondary: '#3D7BAA',
+            primary: '#7E152D',
+            secondary: '#9E243F',
             accent: '#D4AF37',
-            ivory: '#FDFCF7'
+            ivory: '#FFFDF9'
           },
           isPublished: true
         });
@@ -174,10 +181,13 @@ export const InvitationPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-[#F0F6FA] select-none">
-        <div className="w-12 h-12 rounded-full border-2 border-[#73B2D9] border-t-transparent animate-spin mb-4" />
-        <p className="font-serif italic text-[#31628A] tracking-wider text-sm">
-          Preparing your bespoke invitation...
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#FAF7F0] select-none">
+        <div className="w-12 h-12 rounded-full border-2 border-[#D4AF37] border-t-transparent animate-spin mb-4" />
+        <p className="font-devanagari text-[#7E152D] tracking-widest text-base font-bold mb-1">
+          ॥ श्री गणेशाय नमः ॥
+        </p>
+        <p className="font-serif italic text-[#8C6718] tracking-wider text-sm">
+          Preparing your royal wedding invitation...
         </p>
       </div>
     );
@@ -185,15 +195,15 @@ export const InvitationPage: React.FC = () => {
 
   if (!data) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
-        <h2 className="text-2xl font-serif text-gray-800">Invitation not found</h2>
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center bg-[#FAF7F0]">
+        <h2 className="text-2xl font-serif text-[#5C0D1E]">Invitation not found</h2>
       </div>
     );
   }
 
   return (
-    <div className="relative min-h-screen bg-[#F8F9FA] text-[#1F3C55] overflow-x-hidden">
-      {/* Floating Romantic Music Player */}
+    <div className="relative min-h-screen bg-[#FAF7F0] text-[#3D0612] overflow-x-hidden">
+      {/* Floating Auspicious Music Player */}
       {data.musicTrack.enabled && (
         <MusicPlayer
           customTrackUrl={data.musicTrack.url}
@@ -206,10 +216,10 @@ export const InvitationPage: React.FC = () => {
         <div className="fixed bottom-5 left-5 z-50 flex items-center gap-2">
           <button
             onClick={replayOpening}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 hover:bg-white text-[#2A5171] border border-[#C4DCED] shadow-md backdrop-blur-md text-[11px] font-sans uppercase tracking-wider font-medium transition-all"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/95 hover:bg-[#FFFDF9] text-[#7E152D] border border-[#D4AF37]/60 shadow-md backdrop-blur-md text-[11px] font-sans uppercase tracking-wider font-semibold transition-all"
             title="Replay opening cinematic scenes"
           >
-            <RotateCcw className="w-3 h-3 text-[#5297C7]" />
+            <RotateCcw className="w-3 h-3 text-[#B8860B]" />
             <span>Replay Opening</span>
           </button>
         </div>

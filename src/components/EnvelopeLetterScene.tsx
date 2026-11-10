@@ -16,8 +16,8 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
   partnerOne = 'Uday',
   partnerTwo = 'Priti',
   heading = "You're invited!",
-  body = "Dear Friends and Family,\n\nAs we get ready to say 'I do,' we feel grateful for the wonderful people in our lives.\n\nYour support means the world to us, and we would be honored to have you with us as we begin our life together.",
-  signoff = "With love,\nUday & Priti"
+  body = "Dear Friends and Family,\n\nWith the divine blessings of Lord Ganesha and our beloved elders, we are overjoyed to embark on this sacred journey of holy matrimony.\n\nYour presence, blessings, and warm wishes mean the world to us as we unite our lives in the sacred bond of marriage.",
+  signoff = "With love & respect,\nUday & Priti"
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,24 +26,28 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
   };
 
   return (
-    <div className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-b from-[#F0F6FA] via-[#E1EDF5]/40 to-[#FDFCF7] overflow-hidden select-none">
-      {/* Floating Petals */}
-      <FloatingPetals count={8} />
+    <div className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-b from-[#FAF7F0] via-[#FAF1D6]/35 to-[#FFFDF9] overflow-hidden select-none">
+      {/* Floating Auspicious Petals */}
+      <FloatingPetals count={10} />
 
-      {/* Top Hint */}
+      {/* Top Header Tag */}
       <div className="relative z-20 mb-8 text-center">
-        <span className="text-[11px] font-sans uppercase tracking-[0.35em] text-[#73B2D9] font-semibold bg-white/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-[#C4DCED] shadow-sm">
-          Handcrafted Letter
-        </span>
-        <h2 className="mt-2 text-3xl sm:text-4xl font-cursive text-[#1F3C55]">
-          A Message from {partnerOne} & {partnerTwo}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFDF9]/95 backdrop-blur-sm border border-[#D4AF37]/50 shadow-sm mb-2">
+          <span className="text-[#D4AF37] text-xs">卐</span>
+          <span className="text-[11px] font-sans uppercase tracking-[0.35em] text-[#7E152D] font-bold">
+            शुभ निमंत्रण • Sacred Invitation
+          </span>
+          <span className="text-[#D4AF37] text-xs">卐</span>
+        </div>
+        <h2 className="mt-1 text-3xl sm:text-4xl font-cursive text-[#5C0D1E]">
+          A Heartfelt Message from {partnerOne} & {partnerTwo}
         </h2>
-        <p className="mt-1 text-xs font-serif italic text-[#586A56]">
-          {isOpen ? "Click envelope to close" : "Click the heart seal to open the letter"}
+        <p className="mt-1.5 text-xs font-serif italic text-[#8B6508]">
+          {isOpen ? "Click envelope to fold back" : "Tap the royal golden wax seal to unseal the invitation"}
         </p>
       </div>
 
-      {/* User's Exact Animated Envelope Component */}
+      {/* Royal Indian Wedding Envelope (Kankotri) */}
       <div className="envelope-container relative z-30 my-4">
         <div
           className={`envelope-wrapper ${isOpen ? 'flap' : ''}`}
@@ -53,23 +57,40 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
           aria-label="Wedding Invitation Envelope"
         >
           <div className="envelope">
+            {/* The Handcrafted Letter inside */}
             <div className="letter">
-              <div className="text">
-                <strong className="block text-sm sm:text-base font-bold text-[#1F3C55] mb-1.5">
-                  {heading}
-                </strong>
-                <div className="text-content space-y-1.5 text-xs sm:text-[13px] leading-relaxed text-[#2C3E50]">
-                  {body.split('\n\n').map((para, i) => (
-                    <p key={i}>{para}</p>
-                  ))}
+              <div className="letter-border">
+                {/* Traditional Sanskrit Header */}
+                <div className="text-center pb-0.5">
+                  <span className="text-[10px] font-devanagari font-bold text-[#7E152D] tracking-widest">
+                    ॥ श्री गणेशाय नमः ॥
+                  </span>
                 </div>
-                <p className="sincerely mt-2 text-xs sm:text-sm font-semibold text-[#3D7BAA]">
-                  {signoff.split('\n')[0]} {signoff.split('\n')[1] || `${partnerOne} & ${partnerTwo}`} ❤️
-                </p>
+                
+                <div className="text flex-1 flex flex-col justify-between">
+                  <div>
+                    <strong className="block text-xs sm:text-[13px] font-bold text-[#5C0D1E] mb-1 text-center font-royal tracking-wide">
+                      {heading}
+                    </strong>
+                    <div className="text-content space-y-1 text-[13.5px] sm:text-xs leading-snug text-[#3D0612]">
+                      {body.split('\n\n').map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="sincerely mt-1.5 text-[11px] sm:text-xs font-semibold text-[#7E152D]">
+                    {signoff.split('\n')[0]}{' '}
+                    <span className="text-[#9E243F] font-bold">{signoff.split('\n')[1] || `${partnerOne} & ${partnerTwo}`}</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="heart" />
+
+          {/* Royal 24K Gold Wax Seal with Auspicious Om / Ganpati relief */}
+          <div className="gold-wax-seal" title="Tap to open sealed letter">
+            <span className="seal-symbol">ॐ</span>
+          </div>
         </div>
       </div>
 
@@ -77,26 +98,28 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
       <div className="relative z-30 mt-12 flex flex-col items-center">
         <button
           onClick={onScrollToDetails}
-          className="flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#5297C7] to-[#3D7BAA] text-white font-sans text-xs uppercase tracking-[0.2em] font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7E152D] via-[#9E243F] to-[#7E152D] text-[#FFF9E6] font-sans text-xs uppercase tracking-[0.2em] font-semibold shadow-xl hover:shadow-[#7E152D]/40 hover:scale-105 border border-[#D4AF37]/50 transition-all duration-300"
         >
-          <span>View Wedding Details</span>
-          <ChevronDown className="w-4 h-4 animate-bounce" />
+          <span>View Ceremonies & Venue</span>
+          <ChevronDown className="w-4 h-4 animate-bounce text-[#FDE68A]" />
         </button>
-        <p className="mt-3 text-xs font-serif italic text-[#3D7BAA]/80 tracking-wide text-center">
-          Scroll down to discover ceremonies & venue details
+        <p className="mt-3 text-xs font-serif italic text-[#7E152D]/85 tracking-wide text-center">
+          Scroll down to discover auspicious wedding ceremonies, muhurat & directions
         </p>
       </div>
 
-      {/* Scoped CSS Implementation matching user's exact specification */}
+      {/* Scoped CSS Implementation for Royal Indian Envelope */}
       <style>{`
         :root {
-          --primary: #FFFFFF;
-          --bg-envelope-color: #B9D6EC;
-          --envelope-tab: #97C0DE;
-          --envelope-cover: #7CB0D5;
-          --shadow-color: rgba(30, 60, 90, 0.22);
-          --heart-color: #c2465d;
-          --txt-color: #1F3C55;
+          --primary: #FFFDF9;
+          --bg-envelope-color: #8C1D34;
+          --envelope-tab: #A32842;
+          --envelope-cover: #731326;
+          --shadow-color: rgba(92, 13, 30, 0.35);
+          --seal-gold-1: #FFE79A;
+          --seal-gold-2: #D4AF37;
+          --seal-gold-3: #8C6718;
+          --txt-color: #3D0612;
         }
 
         .envelope-container {
@@ -109,46 +132,49 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
         .envelope-wrapper {
           position: relative;
           background: var(--bg-envelope-color);
-          box-shadow: 0 15px 40px var(--shadow-color);
-          border-radius: 4px;
+          box-shadow: 0 18px 45px var(--shadow-color);
+          border-radius: 6px;
           cursor: pointer;
           transition: transform 0.3s ease;
+          border: 1px solid rgba(212, 175, 55, 0.4);
         }
 
         .envelope-wrapper:hover {
-          transform: translateY(-2px);
+          transform: translateY(-3px);
         }
 
         .envelope-wrapper > .envelope {
           position: relative;
-          width: 340px;
-          height: 240px;
+          width: 350px;
+          height: 250px;
         }
 
         @media (min-width: 640px) {
           .envelope-wrapper > .envelope {
-            width: 360px;
-            height: 250px;
+            width: 380px;
+            height: 265px;
           }
         }
 
-        /* Top Flap (Triangular fold) */
+        /* Top Flap (Triangular fold with gold lining) */
         .envelope-wrapper > .envelope::before {
           content: "";
           position: absolute;
           top: 0;
           z-index: 2;
-          border-top: 130px solid var(--envelope-tab);
-          border-right: 170px solid transparent;
-          border-left: 170px solid transparent;
+          border-top: 135px solid var(--envelope-tab);
+          border-right: 175px solid transparent;
+          border-left: 175px solid transparent;
           transform-origin: top;
           transition: all 0.5s ease-in-out 0.7s;
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         @media (min-width: 640px) {
           .envelope-wrapper > .envelope::before {
-            border-right: 180px solid transparent;
-            border-left: 180px solid transparent;
+            border-top: 140px solid var(--envelope-tab);
+            border-right: 190px solid transparent;
+            border-left: 190px solid transparent;
           }
         }
 
@@ -159,16 +185,18 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
           z-index: 2;
           width: 0px;
           height: 0px;
-          border-top: 130px solid transparent;
-          border-right: 170px solid var(--envelope-cover);
-          border-bottom: 120px solid var(--envelope-cover);
-          border-left: 170px solid var(--envelope-cover);
+          border-top: 135px solid transparent;
+          border-right: 175px solid var(--envelope-cover);
+          border-bottom: 125px solid var(--envelope-cover);
+          border-left: 175px solid var(--envelope-cover);
         }
 
         @media (min-width: 640px) {
           .envelope-wrapper > .envelope::after {
-            border-right: 180px solid var(--envelope-cover);
-            border-left: 180px solid var(--envelope-cover);
+            border-top: 140px solid transparent;
+            border-right: 190px solid var(--envelope-cover);
+            border-bottom: 135px solid var(--envelope-cover);
+            border-left: 190px solid var(--envelope-cover);
           }
         }
 
@@ -179,68 +207,85 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
         /* Letter Inside Envelope */
         .envelope > .letter {
           position: absolute;
-          right: 13%;
+          right: 7%;
           bottom: 0;
-          width: 74%;
-          height: 84%;
+          width: 86%;
+          height: 90%;
           background: var(--primary);
           text-align: center;
           transition: all 1s ease-in-out;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
-          padding: 16px 14px;
+          box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+          padding: 6px;
           border-radius: 6px;
           box-sizing: border-box;
           overflow: hidden;
           z-index: 1;
         }
 
-        .envelope > .letter > .text {
+        .letter-border {
+          width: 100%;
+          height: 100%;
+          border: 1.5px solid #D4AF37;
+          border-radius: 4px;
+          padding: 8px 10px;
+          box-sizing: border-box;
+          outline: 1px dashed rgba(212, 175, 55, 0.45);
+          outline-offset: -3px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background: radial-gradient(circle at center, #FFFDF9 60%, #FAF2DE 100%);
+        }
+
+        .envelope > .letter .text {
           font-family: "Caveat", cursive;
           font-style: normal;
           color: var(--txt-color);
           text-align: justify;
-          font-size: 13px;
-          line-height: 1.35;
-          padding-right: 2px;
+          font-size: 11.5px;
+          line-height: 1.32;
+        }
+
+        @media (min-width: 640px) {
+          .envelope > .letter .text {
+            font-size: 12.5px;
+            line-height: 1.35;
+          }
         }
 
         .text strong {
-          font-size: 15px;
-          font-family: "Caveat", cursive;
+          font-size: 13.5px;
+          font-family: "Cinzel", "Cormorant Garamond", serif;
           letter-spacing: 0.5px;
         }
 
-        /* Romantic Heart Seal */
-        .heart {
+        /* Royal 24K Gold Wax Seal */
+        .gold-wax-seal {
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 16px;
-          height: 16px;
-          background: var(--heart-color);
-          z-index: 4;
-          transform: translate(-50%, -20%) rotate(45deg);
-          transition: transform 0.5s ease-in-out 1s;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-        }
-
-        .heart:before, 
-        .heart:after {
-          content: "";
-          position: absolute;
-          width: 16px;
-          height: 16px;
-          background-color: var(--heart-color);
+          width: 44px;
+          height: 44px;
           border-radius: 50%;
+          background: radial-gradient(circle at 35% 35%, var(--seal-gold-1) 0%, var(--seal-gold-2) 55%, var(--seal-gold-3) 100%);
+          border: 2px solid #FFF2BD;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+          transform: translate(-50%, -20%);
+          z-index: 4;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: transform 0.5s ease-in-out 1s, opacity 0.4s ease;
         }
 
-        .heart:before {
-          top: -8px;
-        }
-
-        .heart:after {
-          right: 8px;
+        .seal-symbol {
+          font-family: "Tiro Devanagari Hindi", serif;
+          font-size: 19px;
+          font-weight: 700;
+          color: #5C0D1E;
+          text-shadow: 0 1px 1px rgba(255, 240, 180, 0.8), 0 -1px 1px rgba(90, 15, 30, 0.5);
+          line-height: 1;
         }
 
         /* Open Flap State */
@@ -250,22 +295,36 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
         }
 
         .flap > .envelope > .letter {
-          bottom: 95px;
-          transform: scale(1.42);
+          bottom: 105px;
+          height: 94%;
+          transform: scale(1.36);
           transition-delay: 0.9s;
           z-index: 5;
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 18px 35px rgba(92, 13, 30, 0.3);
+          overflow-y: auto;
+          scrollbar-width: thin;
+          scrollbar-color: #D4AF37 transparent;
+        }
+
+        .flap > .envelope > .letter::-webkit-scrollbar {
+          width: 3px;
+        }
+
+        .flap > .envelope > .letter::-webkit-scrollbar-thumb {
+          background: #D4AF37;
+          border-radius: 3px;
         }
 
         @media (max-width: 639px) {
           .flap > .envelope > .letter {
-            bottom: 85px;
-            transform: scale(1.32);
+            bottom: 90px;
+            transform: scale(1.26);
           }
         }
+        }
 
-        .flap > .heart {
-          transform: rotate(90deg);
+        .flap > .gold-wax-seal {
+          transform: translate(-50%, -20%) scale(0.6) rotate(90deg);
           transition-delay: 0.4s;
           opacity: 0;
         }

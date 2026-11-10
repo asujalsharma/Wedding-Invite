@@ -54,32 +54,36 @@ export const ClosingSection: React.FC<Props> = ({
   };
 
   return (
-    <footer className="py-20 px-4 bg-gradient-to-b from-[#FDFCFA] to-[#E1EDF5]/40 text-center relative overflow-hidden">
-      {/* Decorative floral arch watermark */}
+    <footer className="py-20 px-4 bg-gradient-to-b from-[#FFFDF9] via-[#FAF5EC] to-[#F5ECE0] text-center relative overflow-hidden">
+      {/* Decorative floral watermark */}
       <div className="max-w-xl mx-auto flex flex-col items-center">
         
-        {/* Floating Heart Icon */}
-        <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-[#C4DCED] flex items-center justify-center text-[#5297C7] mb-6">
-          <Heart className="w-6 h-6 fill-[#E1EDF5]" />
+        {/* Floating Auspicious Kalash / Diya Medallion */}
+        <div className="w-14 h-14 rounded-full bg-[#FFFDF9] shadow-md border-2 border-[#D4AF37] flex items-center justify-center text-[#7E152D] mb-5">
+          <span className="text-xl">🪔</span>
         </div>
 
-        <span className="text-[11px] font-sans uppercase tracking-[0.35em] text-[#73B2D9] font-semibold">
-          With Gratitude & Joy
-        </span>
+        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#FFFDF9] border border-[#D4AF37]/45 mb-2 shadow-2xs">
+          <span className="text-[#D4AF37] text-xs">卐</span>
+          <span className="text-[11px] font-sans uppercase tracking-[0.35em] text-[#7E152D] font-bold">
+            ॥ कृतज्ञता एवं शुभाशीर्वाद ॥
+          </span>
+          <span className="text-[#D4AF37] text-xs">卐</span>
+        </div>
 
-        <h2 className="mt-2 text-4xl sm:text-5xl font-cursive text-[#1F3C55]">
-          Thank You
+        <h2 className="mt-2 text-4xl sm:text-5xl font-cursive text-[#5C0D1E]">
+          With Gratitude & Joy
         </h2>
 
-        <p className="mt-4 text-sm font-serif italic text-[#334E68] max-w-md leading-relaxed">
-          "We cannot wait to celebrate the beginning of our new chapter surrounded by the people who mean the world to us."
+        <p className="mt-4 text-sm font-serif italic text-[#7E152D] max-w-md leading-relaxed">
+          "We cannot wait to celebrate the beginning of our new chapter surrounded by the sacred blessings, love, and joy of our dearest family and friends."
         </p>
 
-        <p className="mt-6 font-cursive text-3xl text-[#2A5171]">
+        <p className="mt-6 font-cursive text-3xl sm:text-4xl text-[#5C0D1E]">
           {partnerOne} & {partnerTwo}
         </p>
 
-        <p className="mt-1 font-serif text-xs text-[#889C86] uppercase tracking-widest">
+        <p className="mt-1.5 font-serif text-xs text-[#8C6718] uppercase tracking-widest font-semibold">
           November 25, 2026 • Shri Radhey Paradise, Gwalior
         </p>
 
@@ -87,7 +91,7 @@ export const ClosingSection: React.FC<Props> = ({
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <button
             onClick={handleShare}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-[#2A5171] border border-[#73B2D9] shadow-sm hover:bg-[#F0F6FA] text-xs font-sans uppercase tracking-wider font-medium transition-all"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-[#5C0D1E] border border-[#D4AF37]/70 shadow-sm hover:bg-[#FAF7F0] text-xs font-sans uppercase tracking-wider font-semibold transition-all"
           >
             {copied ? (
               <>
@@ -96,7 +100,7 @@ export const ClosingSection: React.FC<Props> = ({
               </>
             ) : (
               <>
-                <Share2 className="w-3.5 h-3.5 text-[#5297C7]" />
+                <Share2 className="w-3.5 h-3.5 text-[#B8860B]" />
                 <span>Share Invitation</span>
               </>
             )}
@@ -104,23 +108,23 @@ export const ClosingSection: React.FC<Props> = ({
 
           <button
             onClick={handleAddToCalendar}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#5297C7] to-[#3D7BAA] text-white shadow-sm hover:shadow-md text-xs font-sans uppercase tracking-wider font-medium transition-all"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#7E152D] via-[#9E243F] to-[#7E152D] text-[#FFF9E6] border border-[#D4AF37]/50 shadow-md hover:shadow-[#7E152D]/30 text-xs font-sans uppercase tracking-wider font-semibold transition-all"
           >
-            <Calendar className="w-3.5 h-3.5" />
+            <Calendar className="w-3.5 h-3.5 text-[#FDE68A]" />
             <span>Add to Calendar</span>
           </button>
         </div>
 
         {/* Admin Link at the very bottom */}
-        <div className="mt-16 pt-8 border-t border-[#C4DCED]/50 flex items-center justify-center gap-2 text-[11px] text-gray-400">
-          <span>Custom European Animated Wedding Invitation</span>
+        <div className="mt-16 pt-8 border-t border-[#D4AF37]/35 flex items-center justify-center gap-2 text-[11px] text-[#8C6718]/80">
+          <span>Royal Indian Bespoke Wedding Invitation</span>
           <span>•</span>
           <Link
             to="/admin"
-            className="flex items-center gap-1 text-[#73B2D9] hover:text-[#2A5171] transition-colors"
+            className="flex items-center gap-1 text-[#7E152D] hover:text-[#5C0D1E] font-medium transition-colors"
           >
             <Lock className="w-3 h-3" />
-            <span>Admin Portal</span>
+            <span>Host Portal</span>
           </Link>
         </div>
       </div>

@@ -36,18 +36,22 @@ export const GallerySection: React.FC<Props> = ({ gallery }) => {
   };
 
   return (
-    <section id="gallery" className="py-20 px-4 bg-[#F8F9FA] relative">
+    <section id="gallery" className="py-20 px-4 bg-[#FAF7F0] relative">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#73B2D9] font-semibold">
-            Cherished Memories
-          </span>
-          <h2 className="mt-2 text-4xl sm:text-5xl font-cursive text-[#1F3C55]">
-            Our Love Story
+          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#FFFDF9] border border-[#D4AF37]/45 mb-2 shadow-2xs">
+            <span className="text-[#D4AF37] text-xs">卐</span>
+            <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#7E152D] font-bold">
+              ॥ स्मृतियाँ ॥ • Cherished Moments & Celebrations
+            </span>
+            <span className="text-[#D4AF37] text-xs">卐</span>
+          </div>
+          <h2 className="mt-2 text-4xl sm:text-5xl font-cursive text-[#5C0D1E]">
+            Our Journey Together
           </h2>
-          <p className="mt-2 text-sm font-serif italic text-[#586A56]">
-            Glimpses of the journey leading to our forever
+          <p className="mt-2 text-sm font-serif italic text-[#8B6508]">
+            Capturing the joyous footsteps leading to our sacred union
           </p>
         </div>
 
@@ -57,7 +61,7 @@ export const GallerySection: React.FC<Props> = ({ gallery }) => {
             <div
               key={item.id || idx}
               onClick={() => openLightbox(idx)}
-              className="group relative cursor-pointer overflow-hidden rounded-3xl bg-white border border-[#C4DCED]/50 shadow-md hover:shadow-xl transition-all duration-500 aspect-[4/5]"
+              className="group relative cursor-pointer overflow-hidden rounded-3xl bg-[#FFFDF9] border border-[#D4AF37]/45 shadow-md hover:shadow-xl hover:border-[#D4AF37] transition-all duration-500 aspect-[4/5]"
             >
               <img
                 src={item.url}
@@ -66,10 +70,10 @@ export const GallerySection: React.FC<Props> = ({ gallery }) => {
                 loading="lazy"
               />
               {/* Overlay with zoom icon and caption */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-widest text-[#C4DCED]">
-                    {item.category || 'Memory'}
+                  <span className="text-xs uppercase tracking-widest text-[#FDE68A] font-semibold">
+                    {item.category || 'Sacred Moment'}
                   </span>
                   <ZoomIn className="w-4 h-4 text-white" />
                 </div>

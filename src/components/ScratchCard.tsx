@@ -137,7 +137,7 @@ export const ScratchCard: React.FC<ScratchCardProps> = ({
         particleCount: 15,
         spread: 40,
         origin: { y: 0.65 },
-        colors: ['#D4AF37', '#73B2D9', '#FFF']
+        colors: ['#D4AF37', '#9E1B32', '#F59E0B', '#FFF9E6']
       });
     } catch (e) {
       // ignore

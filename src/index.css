@@ -9,29 +9,35 @@
   }
 
   body {
-    background-color: #F8F9FA;
-    color: #243447;
+    background-color: #FAF7F0;
+    color: #3D0612;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 }
 
-/* Custom watercolor paper texture effect */
+/* Custom royal Indian raw silk / chandan paper texture */
 .watercolor-bg {
-  background-color: #FDFCFA;
+  background-color: #FAF7F0;
   background-image: 
-    radial-gradient(at 10% 20%, rgba(225, 237, 245, 0.4) 0px, transparent 50%),
-    radial-gradient(at 90% 10%, rgba(244, 233, 211, 0.35) 0px, transparent 50%),
-    radial-gradient(at 50% 80%, rgba(196, 220, 237, 0.3) 0px, transparent 60%);
+    radial-gradient(at 10% 20%, rgba(245, 220, 165, 0.35) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(191, 67, 93, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(212, 175, 55, 0.15) 0px, transparent 60%);
 }
 
 .paper-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(196, 220, 237, 0.4);
-  box-shadow: 0 10px 30px -5px rgba(50, 80, 110, 0.08), 0 4px 10px -2px rgba(50, 80, 110, 0.04);
+  background: #FFFDF9;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(92, 13, 30, 0.08), 0 4px 10px -2px rgba(212, 175, 55, 0.06);
 }
 
 .luxury-border {
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.ornate-gold-border {
+  border: 1.5px solid #D4AF37;
+  outline: 1px dashed rgba(212, 175, 55, 0.5);
+  outline-offset: -5px;
 }
 
 /* 3D perspective for gates and envelopes */
@@ -51,14 +57,14 @@
   backface-visibility: hidden;
 }
 
-/* Subtle gold foil shimmer */
+/* 24K Royal Zari Gold shimmer */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
 .gold-foil {
-  background: linear-gradient(135deg, #A27B38 0%, #D4AF37 25%, #FFF4D0 50%, #D4AF37 75%, #8B6526 100%);
+  background: linear-gradient(135deg, #9E782F 0%, #D4AF37 25%, #FFF6D6 50%, #D4AF37 75%, #7D5A1A 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -77,5 +83,5 @@
 
 /* Envelope flap styling */
 .envelope-shadow {
-  box-shadow: 0 25px 50px -12px rgba(61, 123, 170, 0.25), 0 0 0 1px rgba(115, 178, 217, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(126, 21, 45, 0.35), 0 0 0 1px rgba(212, 175, 55, 0.3);
 }

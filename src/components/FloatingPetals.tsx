@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react';
 
-export const FloatingPetals: React.FC<{ count?: number }> = ({ count = 12 }) => {
+export const FloatingPetals: React.FC<{ count?: number }> = ({ count = 14 }) => {
   const petals = useMemo(() => {
+    const types: Array<'rose' | 'marigold' | 'gold'> = ['rose', 'marigold', 'rose', 'gold', 'marigold'];
     return Array.from({ length: count }).map((_, i) => ({
       id: i,
+      type: types[i % types.length],
       left: `${(i * 100) / count + (Math.sin(i) * 5)}%`,
-      delay: `${(i * 0.7) % 5}s`,
+      delay: `${(i * 0.6) % 5}s`,
       duration: `${7 + (i % 5) * 2}s`,
       size: `${14 + (i % 3) * 6}px`,
       rotation: `${(i * 45) % 360}deg`
@@ -17,7 +19,7 @@ export const FloatingPetals: React.FC<{ count?: number }> = ({ count = 12 }) => 
       {petals.map((petal) => (
         <div
           key={petal.id}
-          className="absolute opacity-60 animate-petal-fall"
+          className="absolute opacity-75 animate-petal-fall"
           style={{
             left: petal.left,
             top: '-20px',
@@ -26,7 +28,7 @@ export const FloatingPetals: React.FC<{ count?: number }> = ({ count = 12 }) => 
             transform: `rotate(${petal.rotation})`,
           }}
         >
-          {/* Delicate watercolor rose petal SVG */}
+          {/* Auspicious Pushpa Vrishti: Rose (Gulab) or Marigold (Genda) or Golden Flake */}
           <svg
             width={petal.size}
             height={petal.size}
@@ -36,19 +38,38 @@ export const FloatingPetals: React.FC<{ count?: number }> = ({ count = 12 }) => 
           >
             <path
               d="M15 2C18 7 28 12 28 20C28 26 21 28 15 28C9 28 2 26 2 20C2 12 12 7 15 2Z"
-              fill="url(#petalGradient)"
-              opacity="0.85"
+              fill={`url(#petalGrad-${petal.type})`}
+              opacity="0.9"
             />
-            <defs>
-              <linearGradient id="petalGradient" x1="15" y1="2" x2="15" y2="28" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#FFFFFF" />
-                <stop offset="0.6" stopColor="#E1EDF5" />
-                <stop offset="1" stopColor="#C4DCED" />
-              </linearGradient>
-            </defs>
           </svg>
         </div>
       ))}
+
+      <svg width="0" height="0" className="absolute">
+        <defs>
+          {/* Auspicious Red / Velvet Rose Petal (Gulab) */}
+          <linearGradient id="petalGrad-rose" x1="15" y1="2" x2="15" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#FFA4B2" />
+            <stop offset="0.4" stopColor="#C92A42" />
+            <stop offset="1" stopColor="#7E152D" />
+          </linearGradient>
+
+          {/* Auspicious Marigold Petal (Genda Phool) */}
+          <linearGradient id="petalGrad-marigold" x1="15" y1="2" x2="15" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#FEF08A" />
+            <stop offset="0.5" stopColor="#F59E0B" />
+            <stop offset="1" stopColor="#D97706" />
+          </linearGradient>
+
+          {/* Auspicious 24K Gold Flake */}
+          <linearGradient id="petalGrad-gold" x1="15" y1="2" x2="15" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#FFF9E6" />
+            <stop offset="0.5" stopColor="#E5C158" />
+            <stop offset="1" stopColor="#B8860B" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       <style>{`
         @keyframes petalFall {
           0% {
@@ -56,10 +77,10 @@ export const FloatingPetals: React.FC<{ count?: number }> = ({ count = 12 }) => 
             opacity: 0;
           }
           10% {
-            opacity: 0.8;
+            opacity: 0.85;
           }
           90% {
-            opacity: 0.8;
+            opacity: 0.85;
           }
           100% {
             transform: translateY(105vh) rotate(360deg) translateX(50px);

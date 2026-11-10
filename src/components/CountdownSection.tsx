@@ -81,10 +81,10 @@ export const CountdownSection: React.FC<Props> = ({
     setAllRevealed(true);
     try {
       confetti({
-        particleCount: 50,
-        spread: 60,
+        particleCount: 60,
+        spread: 65,
         origin: { y: 0.65 },
-        colors: ['#D4AF37', '#73B2D9', '#FFF']
+        colors: ['#D4AF37', '#9E1B32', '#F59E0B', '#FFF9E6']
       });
     } catch (e) {
       // ignore
@@ -92,55 +92,59 @@ export const CountdownSection: React.FC<Props> = ({
   };
 
   return (
-    <section className="py-16 px-4 bg-[#FDFCFA] border-y border-[#E1EDF5] relative overflow-hidden select-none">
-      {/* Decorative Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#C4DCED]/20 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-16 px-4 bg-[#FFFDF9] border-y border-[#D4AF37]/30 relative overflow-hidden select-none">
+      {/* Decorative Auspicious Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#FDF1D6]/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
-        <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#73B2D9] font-semibold">
-          Save Our Special Date
-        </span>
+        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#FAF5EB] border border-[#D4AF37]/45 mb-2">
+          <span className="text-[#D4AF37] text-xs">卐</span>
+          <span className="text-[11px] font-sans uppercase tracking-[0.3em] text-[#7E152D] font-bold">
+            शुभ लग्न मुहूर्त • Auspicious Countdown
+          </span>
+          <span className="text-[#D4AF37] text-xs">卐</span>
+        </div>
 
         {/* Date Header with Optional Scratch Banner */}
         <div className="mt-2 flex justify-center">
           <ScratchCard
             className="rounded-2xl max-w-md w-full"
-            cardLabel="Date"
+            cardLabel="Auspicious Date"
             brushSize={26}
             revealThreshold={0.3}
           >
-            <div className="py-2 px-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-[#C4DCED]/40">
-              <h2 className="text-3xl sm:text-4xl font-serif text-[#1F3C55]">
+            <div className="py-2.5 px-5 bg-white/90 backdrop-blur-sm rounded-2xl border border-[#D4AF37]/50 shadow-sm">
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#5C0D1E]">
                 Wednesday, November 25, 2026
               </h2>
             </div>
           </ScratchCard>
         </div>
 
-        <p className="mt-3 text-sm font-serif italic text-[#586A56]">
-          The countdown to our forever has begun
+        <p className="mt-3 text-sm font-serif italic text-[#8C6718]">
+          "The sacred hour approaches as two hearts unite in eternal Vedic bond"
         </p>
 
         {/* Scratch Instruction Badge */}
         <div className="mt-4 flex items-center justify-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF9E6] border border-[#F0DC9E] text-[11px] font-sans text-[#8C6826] font-medium shadow-2xs">
-            <Sparkles className="w-3 h-3 text-[#D4AF37]" />
-            <span>Scratch with your finger or mouse to reveal</span>
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF9E6] border border-[#E9C775] text-[11px] font-sans text-[#7E152D] font-medium shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <span>Scratch with your finger or cursor to unveil</span>
           </span>
 
           {!allRevealed && (
             <button
               onClick={revealAllCards}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white hover:bg-gray-50 border border-gray-200 text-[10px] font-sans uppercase tracking-wider text-gray-600 transition-colors"
+              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white hover:bg-[#FAF7F0] border border-[#D4AF37]/50 text-[10px] font-sans uppercase tracking-wider text-[#7E152D] font-semibold transition-colors shadow-xs"
             >
-              <Wand2 className="w-3 h-3 text-[#5297C7]" />
+              <Wand2 className="w-3 h-3 text-[#D4AF37]" />
               <span>Reveal All</span>
             </button>
           )}
         </div>
 
         {/* Scratch-off Countdown Time Cards */}
-        <div className="mt-7 grid grid-cols-4 gap-2 sm:gap-4 max-w-lg mx-auto">
+        <div className="mt-7 grid grid-cols-4 gap-2.5 sm:gap-4 max-w-lg mx-auto">
           {[
             { label: 'Days', value: timeLeft.days },
             { label: 'Hours', value: timeLeft.hours },
@@ -150,17 +154,17 @@ export const CountdownSection: React.FC<Props> = ({
             <ScratchCard
               key={idx}
               id={`scratch-${idx}`}
-              className="rounded-2xl shadow-sm border border-[#C4DCED]/80"
+              className="rounded-2xl shadow-sm border border-[#D4AF37]/50 overflow-hidden"
               cardLabel={item.label}
               brushSize={20}
               revealThreshold={0.35}
               onRevealed={handleCardRevealed}
             >
-              <div className="bg-white/95 backdrop-blur-sm p-3 sm:p-5 flex flex-col items-center justify-center h-24 sm:h-28 transition-transform hover:-translate-y-0.5">
-                <span className="text-2xl sm:text-4xl font-serif font-bold text-[#2A5171] tabular-nums">
+              <div className="bg-gradient-to-b from-[#FFFDF9] to-[#FAF5EC] p-3 sm:p-5 flex flex-col items-center justify-center h-24 sm:h-28 transition-transform hover:-translate-y-0.5">
+                <span className="text-2xl sm:text-4xl font-serif font-bold text-[#5C0D1E] tabular-nums">
                   {String(item.value).padStart(2, '0')}
                 </span>
-                <span className="text-[10px] sm:text-xs font-sans uppercase tracking-widest text-[#73B2D9] font-medium mt-1">
+                <span className="text-[10px] sm:text-xs font-sans uppercase tracking-widest text-[#B8860B] font-bold mt-1">
                   {item.label}
                 </span>
               </div>
@@ -172,17 +176,17 @@ export const CountdownSection: React.FC<Props> = ({
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <button
             onClick={handleGoogleCalendar}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#2A5171] border border-[#73B2D9]/60 shadow-sm hover:bg-[#F0F6FA] text-xs font-sans uppercase tracking-wider font-medium transition-all"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#5C0D1E] border border-[#D4AF37]/60 shadow-sm hover:bg-[#FAF7F0] text-xs font-sans uppercase tracking-wider font-semibold transition-all"
           >
-            <Calendar className="w-3.5 h-3.5 text-[#5297C7]" />
+            <Calendar className="w-3.5 h-3.5 text-[#9E243F]" />
             <span>Add to Google Calendar</span>
           </button>
 
           <button
             onClick={handleIcsDownload}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#2A5171] border border-[#C4DCED] shadow-sm hover:bg-[#F0F6FA] text-xs font-sans uppercase tracking-wider font-medium transition-all"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#5C0D1E] border border-[#D4AF37]/60 shadow-sm hover:bg-[#FAF7F0] text-xs font-sans uppercase tracking-wider font-semibold transition-all"
           >
-            <Download className="w-3.5 h-3.5 text-[#889C86]" />
+            <Download className="w-3.5 h-3.5 text-[#7E152D]" />
             <span>Download .ICS (Apple/Outlook)</span>
           </button>
         </div>

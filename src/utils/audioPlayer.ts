@@ -89,29 +89,20 @@ class WeddingMusicManager {
   private startRomanticMelody() {
     if (!this.audioCtx || !this.isPlaying) return;
 
-    // Peaceful Romantic Piano Melody (Key of D Major / Canon in D inspired romantic arpeggios)
-    // Frequencies in Hz for soft music box / piano tone
+    // Auspicious Indian Wedding Raag Melodic Scale (Raag Bhupali / Kalyan Santoor & Sitar)
+    // Notes: Sa (293.66), Re (329.63), Ga (369.99), Pa (440.00), Dha (493.88), Sa' (587.33)
     const notes = [
-      // Phrase 1: D Major arpeggio
-      293.66, 369.99, 440.00, 587.33,
-      // A Major
-      220.00, 329.63, 440.00, 554.37,
-      // B Minor
-      246.94, 369.99, 440.00, 493.88,
-      // F# Minor
-      185.00, 277.18, 369.99, 440.00,
-      // G Major
-      196.00, 293.66, 392.00, 493.88,
-      // D Major
-      220.00, 293.66, 369.99, 440.00,
-      // G Major / Em
-      196.00, 246.94, 329.63, 392.00,
-      // A7 romantic resolution
-      220.00, 277.18, 329.63, 440.00
+      // Phrase 1: Graceful Ascent (Aaroh)
+      293.66, 329.63, 369.99, 440.00, 493.88, 587.33,
+      // Phrase 2: Gentle Traditional Cadence
+      493.88, 440.00, 369.99, 329.63, 369.99, 293.66,
+      // Phrase 3: Auspicious Celebratory Flow
+      369.99, 440.00, 493.88, 587.33, 493.88, 440.00,
+      329.63, 369.99, 440.00, 369.99, 329.63, 293.66
     ];
 
     let noteIdx = 0;
-    const tempoMs = 520; // gentle, elegant romantic pacing
+    const tempoMs = 520; // gentle, elegant auspicious pacing
 
     const playNext = () => {
       if (!this.isPlaying || !this.audioCtx) return;
@@ -119,9 +110,11 @@ class WeddingMusicManager {
       const freq = notes[noteIdx % notes.length];
       this.playPluckNote(freq);
 
-      // occasionally play a bass note for warmth
-      if (noteIdx % 4 === 0) {
-        this.playPluckNote(freq / 2, 0.12, 1.8);
+      // occasionally play a soft tanpura/drone bass note for auspicious depth
+      if (noteIdx % 6 === 0) {
+        this.playPluckNote(293.66 / 2, 0.12, 2.2);
+      } else if (noteIdx % 6 === 3) {
+        this.playPluckNote(220.00 / 2, 0.10, 2.0);
       }
 
       noteIdx++;
