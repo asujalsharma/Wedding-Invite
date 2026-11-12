@@ -13,7 +13,7 @@ interface Props {
 export const CountdownSection: React.FC<Props> = ({
   targetDateStr = '2026-11-25T17:00:00.000Z',
   partnerOne = 'Uday',
-  partnerTwo = 'Priti'
+  partnerTwo = 'Preeti'
 }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,

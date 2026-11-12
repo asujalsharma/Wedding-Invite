@@ -28,7 +28,7 @@ export const SacredGaneshaIcon: React.FC<{ className?: string }> = ({ className 
 export const LandscapeAnnouncementScene: React.FC<Props> = ({
   onProceedToEnvelope,
   partnerOne = 'Uday',
-  partnerTwo = 'Priti',
+  partnerTwo = 'Preeti',
   announcementText = 'are getting married!',
   weddingDate = 'Wednesday, November 25, 2026'
 }) => {

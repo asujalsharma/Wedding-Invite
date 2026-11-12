@@ -12,7 +12,7 @@ interface Props {
 export const GardenGateScene: React.FC<Props> = ({
   onOpenGate,
   partnerOne = 'Uday',
-  partnerTwo = 'Priti'
+  partnerTwo = 'Preeti'
 }) => {
   const [isUntied, setIsUntied] = useState(false);
   const [gatesSwungOpen, setGatesSwungOpen] = useState(false);

@@ -15,7 +15,7 @@ import { ClosingSection } from '../components/ClosingSection';
 
 export const InvitationPage: React.FC = () => {
   const { slug } = useParams<{ slug?: string }>();
-  const activeSlug = slug || 'uday-priti';
+  const activeSlug = slug || 'uday-preeti';
 
   const [data, setData] = useState<WeddingData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -34,16 +34,16 @@ export const InvitationPage: React.FC = () => {
         setData(inv);
       } catch (err: any) {
         console.error('Fetch error:', err);
-        // Fallback default for Uday & Priti if backend isn't reached immediately
+        // Fallback default for Uday & Preeti if backend isn't reached immediately
         setData({
-          slug: 'uday-priti',
+          slug: 'uday-preeti',
           partnerOne: 'Uday',
-          partnerTwo: 'Priti',
+          partnerTwo: 'Preeti',
           weddingDate: '2026-11-25T17:00:00.000Z',
           announcementText: 'cordially invite you to celebrate their auspicious wedding union',
           letterHeading: "॥ शुभ विवाह ॥ You're Cordially Invited",
-          letterBody: "With the divine blessings of Lord Ganesha and our elders, we joyfully invite you to celebrate the wedding ceremony of Uday & Priti.\n\nYour gracious presence and heartfelt blessings will add boundless joy and sanctity as we unite in holy matrimony.",
-          letterSignoff: "With love & respect,\nUday & Priti",
+          letterBody: "With the divine blessings of Lord Ganesha and our elders, we joyfully invite you to celebrate the wedding ceremony of Uday & Preeti.\n\nYour gracious presence and heartfelt blessings will add boundless joy and sanctity as we unite in holy matrimony.",
+          letterSignoff: "With love & respect,\nUday & Preeti",
           venue: {
             name: "Shri Radhey Paradise Marriage Garden",
             tagline: "Royal Wedding & Reception Venue",
@@ -76,7 +76,7 @@ export const InvitationPage: React.FC = () => {
               venue: 'Shri Radhey Paradise Marriage Garden',
               address: 'Near Hazira Mallgaddha Police Station, Mau, Bhadroli Road, Gwalior (M.P.)',
               dressCode: 'Royal Traditional Festive Attire (Sherwani & Lehengas)',
-              description: 'Join us as Uday & Priti take the sacred seven vows (Saat Phere) around the holy fire and unite in eternal Vedic matrimony.',
+              description: 'Join us as Uday & Preeti take the sacred seven vows (Saat Phere) around the holy fire and unite in eternal Vedic matrimony.',
               icon: 'Heart',
               image: '/assets/indian_panigrahan_saat_phere.jpg'
             },
@@ -102,7 +102,7 @@ export const InvitationPage: React.FC = () => {
               venue: 'Residence Courtyard',
               address: 'Gwalior (M.P.)',
               dressCode: 'Traditional Indian Elegance',
-              description: 'A warm and affectionate welcome into the family home as Priti steps into her new life with auspicious Griha Pravesh rituals.',
+              description: 'A warm and affectionate welcome into the family home as Preeti steps into her new life with auspicious Griha Pravesh rituals.',
               icon: 'Flower2',
               image: '/assets/indian_vadhu_aagman.jpg'
             }
@@ -111,7 +111,7 @@ export const InvitationPage: React.FC = () => {
             {
               id: 'gal-1',
               url: '/assets/indian_panigrahan_saat_phere.jpg',
-              caption: 'Sacred Seven Vows & Panigrahan Sanskar — Uday & Priti',
+              caption: 'Sacred Seven Vows & Panigrahan Sanskar — Uday & Preeti',
               category: 'Saat Phere'
             },
             {

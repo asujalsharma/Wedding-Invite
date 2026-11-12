@@ -63,7 +63,7 @@ export const AdminDashboard: React.FC = () => {
   const loadInvitationData = async () => {
     setLoading(true);
     try {
-      const data = await api.getInvitation('uday-priti');
+      const data = await api.getInvitation('uday-preeti');
       setInvitation(data);
     } catch (err) {
       console.error(err);
@@ -128,7 +128,7 @@ export const AdminDashboard: React.FC = () => {
             Wedding Host Portal
           </h2>
           <p className="text-xs text-center text-[#8C6718] mt-1 mb-6">
-            Log in to manage Uday & Priti's royal wedding invitation
+            Log in to manage Uday & Preeti's royal wedding invitation
           </p>
 
           {loginError && (
@@ -642,7 +642,7 @@ export const AdminDashboard: React.FC = () => {
                 <h3 className="font-serif text-xl font-bold text-[#1F3C55]">
                   Photo Gallery ({invitation.gallery.length} Images)
                 </h3>
-                <p className="text-xs text-gray-500">Curate photographs of Uday and Priti displayed in the editorial grid</p>
+                <p className="text-xs text-gray-500">Curate photographs of Uday and Preeti displayed in the editorial grid</p>
               </div>
 
               <label className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#1F3C55] text-white text-xs font-semibold hover:bg-[#2A5171] cursor-pointer">

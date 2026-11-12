@@ -78,7 +78,7 @@ export const GallerySection: React.FC<Props> = ({ gallery }) => {
                   <ZoomIn className="w-4 h-4 text-white" />
                 </div>
                 <p className="mt-1 font-serif text-sm font-medium text-white/95">
-                  {item.caption || 'Uday & Priti'}
+                  {item.caption || 'Uday & Preeti'}
                 </p>
               </div>
             </div>

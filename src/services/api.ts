@@ -53,14 +53,14 @@ export interface WeddingData {
 }
 
 export const DEFAULT_INVITATION: WeddingData = {
-  slug: 'uday-priti',
+  slug: 'uday-preeti',
   partnerOne: 'Uday',
-  partnerTwo: 'Priti',
+  partnerTwo: 'Preeti',
   weddingDate: '2026-11-25T17:00:00.000Z',
   announcementText: 'cordially invite you to celebrate their auspicious wedding union',
   letterHeading: "॥ शुभ विवाह ॥ You're Cordially Invited",
-  letterBody: "With the divine blessings of Lord Ganesha and our elders, we joyfully invite you to celebrate the wedding ceremony of Uday & Priti.\n\nYour gracious presence and heartfelt blessings will add boundless joy and sanctity as we unite in holy matrimony.",
-  letterSignoff: "With love & respect,\nUday & Priti",
+  letterBody: "With the divine blessings of Lord Ganesha and our elders, we joyfully invite you to celebrate the wedding ceremony of Uday & Preeti.\n\nYour gracious presence and heartfelt blessings will add boundless joy and sanctity as we unite in holy matrimony.",
+  letterSignoff: "With love & respect,\nUday & Preeti",
   venue: {
     name: "Shri Radhey Paradise Marriage Garden",
     tagline: "Wedding & Reception Venue",
@@ -93,7 +93,7 @@ export const DEFAULT_INVITATION: WeddingData = {
       venue: 'Shri Radhey Paradise Marriage Garden',
       address: 'Near Hazira Mallgaddha Police Station, Mau, Bhadroli Road, Gwalior (M.P.)',
       dressCode: 'Royal Traditional Festive Attire (Sherwani & Lehengas)',
-      description: 'Join us as Uday & Priti take the sacred seven vows (Saat Phere) around the holy fire and unite in eternal Vedic matrimony.',
+      description: 'Join us as Uday & Preeti take the sacred seven vows (Saat Phere) around the holy fire and unite in eternal Vedic matrimony.',
       icon: 'Heart',
       image: '/assets/indian_panigrahan_saat_phere.jpg'
     },
@@ -119,7 +119,7 @@ export const DEFAULT_INVITATION: WeddingData = {
       venue: 'Residence Courtyard',
       address: 'Gwalior (M.P.)',
       dressCode: 'Traditional Indian Elegance',
-      description: 'A warm and affectionate welcome into the family home as Priti steps into her new life with auspicious Griha Pravesh rituals.',
+      description: 'A warm and affectionate welcome into the family home as Preeti steps into her new life with auspicious Griha Pravesh rituals.',
       icon: 'Flower2',
       image: '/assets/indian_vadhu_aagman.jpg'
     }
@@ -128,7 +128,7 @@ export const DEFAULT_INVITATION: WeddingData = {
     {
       id: 'gal-1',
       url: '/assets/indian_panigrahan_saat_phere.jpg',
-      caption: 'Sacred Seven Vows & Panigrahan Sanskar — Uday & Priti',
+      caption: 'Sacred Seven Vows & Panigrahan Sanskar — Uday & Preeti',
       category: 'Saat Phere'
     },
     {
@@ -181,11 +181,19 @@ const STORAGE_KEY_PREFIX = 'wedding_invitation_data_';
 
 // 100% Client-Side Service
 export const api = {
-  async getInvitation(slug: string = 'uday-priti'): Promise<WeddingData> {
-    const raw = localStorage.getItem(STORAGE_KEY_PREFIX + slug);
+  async getInvitation(slug: string = 'uday-preeti'): Promise<WeddingData> {
+    const targetSlug = slug || 'uday-preeti';
+    let raw = localStorage.getItem(STORAGE_KEY_PREFIX + targetSlug);
+    if (!raw && (targetSlug === 'uday-preeti' || targetSlug === 'uday-priti')) {
+      raw = localStorage.getItem(STORAGE_KEY_PREFIX + 'uday-preeti') || localStorage.getItem(STORAGE_KEY_PREFIX + 'uday-priti');
+    }
     if (raw) {
       try {
-        return JSON.parse(raw);
+        const parsed = JSON.parse(raw);
+        if (parsed.partnerTwo === 'Priti') {
+          parsed.partnerTwo = 'Preeti';
+        }
+        return parsed;
       } catch (e) {
         // fallback
       }

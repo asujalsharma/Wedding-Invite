@@ -11,7 +11,7 @@ interface Props {
 
 export const ClosingSection: React.FC<Props> = ({
   partnerOne = 'Uday',
-  partnerTwo = 'Priti',
+  partnerTwo = 'Preeti',
   weddingDateStr = '2026-11-25T17:00:00.000Z'
 }) => {
   const [copied, setCopied] = useState(false);

@@ -67,7 +67,7 @@ export const WeddingFunctionsSection: React.FC<Props> = ({ functions }) => {
             Auspicious Ceremonies
           </h2>
           <p className="mt-3 text-sm sm:text-base font-serif italic text-[#8B6508] max-w-md mx-auto">
-            Celebrating the sacred and joyous union of Uday & Priti with Vedic traditions
+            Celebrating the sacred and joyous union of Uday & Preeti with Vedic traditions
           </p>
           <div className="mt-4 flex items-center justify-center gap-2">
             <span className="h-[1px] w-14 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />

@@ -14,10 +14,10 @@ interface Props {
 export const EnvelopeLetterScene: React.FC<Props> = ({
   onScrollToDetails,
   partnerOne = 'Uday',
-  partnerTwo = 'Priti',
+  partnerTwo = 'Preeti',
   heading = "You're invited!",
   body = "Dear Friends and Family,\n\nWith the divine blessings of Lord Ganesha and our beloved elders, we are overjoyed to embark on this sacred journey of holy matrimony.\n\nYour presence, blessings, and warm wishes mean the world to us as we unite our lives in the sacred bond of marriage.",
-  signoff = "With love & respect,\nUday & Priti"
+  signoff = "With love & respect,\nUday & Preeti"
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -72,7 +72,7 @@ export const EnvelopeLetterScene: React.FC<Props> = ({
                     <strong className="block text-xs sm:text-[13px] font-bold text-[#5C0D1E] mb-1 text-center font-royal tracking-wide">
                       {heading}
                     </strong>
-                    <div className="text-content space-y-1 text-[13.5px] sm:text-xs leading-snug text-[#3D0612]">
+                    <div className="text-content space-y-1 text-[12px] sm:text-[13px] leading-snug text-[#3D0612] font-medium">
                       {body.split('\n\n').map((para, i) => (
                         <p key={i}>{para}</p>
                       ))}

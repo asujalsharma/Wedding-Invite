@@ -22,7 +22,7 @@ export function generateGoogleCalendarUrl(event: CalendarEvent): string {
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
-export function downloadIcsFile(event: CalendarEvent, filename: string = 'wedding-uday-priti.ics') {
+export function downloadIcsFile(event: CalendarEvent, filename: string = 'wedding-uday-preeti.ics') {
   const formatTime = (d: Date) => d.toISOString().replace(/-|:|\.\d\d\d/g, '');
   const start = formatTime(event.startDate);
   const end = formatTime(event.endDate);
@@ -30,7 +30,7 @@ export function downloadIcsFile(event: CalendarEvent, filename: string = 'weddin
   const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Uday and Priti Wedding//EN',
+    'PRODID:-//Uday and Preeti Wedding//EN',
     'CALSCALE:GREGORIAN',
     'BEGIN:VEVENT',
     `SUMMARY:${event.title}`,
