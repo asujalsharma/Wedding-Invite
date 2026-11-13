@@ -41,6 +41,7 @@ export interface WeddingData {
     title: string;
     artist: string;
     url: string;
+    spotifyUrl?: string;
     enabled: boolean;
   };
   palette: {
@@ -163,9 +164,10 @@ export const DEFAULT_INVITATION: WeddingData = {
     }
   ],
   musicTrack: {
-    title: 'Sacred Shehnai & Sitar Melody',
-    artist: 'Vedic Raga Ensemble',
-    url: '',
+    title: 'Pal Pal Dil Ke Paas',
+    artist: 'Paras Nath • Unwind Instrumental (Flute)',
+    url: '/assets/pal_pal_dil_ke_paas.mp3',
+    spotifyUrl: 'https://open.spotify.com/track/1Dt1SdjNS7NBuQLB5cVW1o',
     enabled: true
   },
   palette: {
@@ -192,6 +194,9 @@ export const api = {
         const parsed = JSON.parse(raw);
         if (parsed.partnerTwo === 'Priti') {
           parsed.partnerTwo = 'Preeti';
+        }
+        if (!parsed.musicTrack?.url || parsed.musicTrack.url === '' || parsed.musicTrack.title === 'Sacred Shehnai & Sitar Melody') {
+          parsed.musicTrack = DEFAULT_INVITATION.musicTrack;
         }
         return parsed;
       } catch (e) {

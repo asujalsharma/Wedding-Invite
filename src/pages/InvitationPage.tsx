@@ -146,9 +146,10 @@ export const InvitationPage: React.FC = () => {
             }
           ],
           musicTrack: {
-            title: 'Sacred Shehnai & Sitar Melody',
-            artist: 'Vedic Raga Ensemble',
-            url: '',
+            title: 'Pal Pal Dil Ke Paas',
+            artist: 'Paras Nath • Unwind Instrumental (Flute)',
+            url: '/assets/pal_pal_dil_ke_paas.mp3',
+            spotifyUrl: 'https://open.spotify.com/track/1Dt1SdjNS7NBuQLB5cVW1o',
             enabled: true
           },
           palette: {
@@ -166,6 +167,30 @@ export const InvitationPage: React.FC = () => {
 
     fetchData();
   }, [activeSlug]);
+
+  // Sync dynamic Open Graph and document metadata
+  useEffect(() => {
+    if (data) {
+      document.title = `${data.partnerOne} & ${data.partnerTwo} | Auspicious Wedding Invitation`;
+
+      const updateMeta = (selector: string, content: string) => {
+        let el = document.querySelector(selector);
+        if (el) {
+          el.setAttribute('content', content);
+        }
+      };
+
+      const origin = window.location.origin;
+      const absImage = origin + '/assets/indian_wedding_palace_scenic.jpg';
+
+      updateMeta('meta[property="og:image"]', absImage);
+      updateMeta('meta[property="og:image:secure_url"]', absImage);
+      updateMeta('meta[name="twitter:image"]', absImage);
+      updateMeta('meta[property="og:url"]', window.location.href);
+      updateMeta('meta[property="og:title"]', `॥ श्री गणेशाय नमः ॥ ${data.partnerOne} & ${data.partnerTwo} Wedding Invitation`);
+      updateMeta('meta[name="twitter:title"]', `॥ श्री गणेशाय नमः ॥ ${data.partnerOne} & ${data.partnerTwo} Wedding Invitation`);
+    }
+  }, [data]);
 
   const scrollToDetails = () => {
     setCurrentScene('details');
@@ -208,6 +233,8 @@ export const InvitationPage: React.FC = () => {
         <MusicPlayer
           customTrackUrl={data.musicTrack.url}
           trackTitle={data.musicTrack.title}
+          trackArtist={data.musicTrack.artist}
+          spotifyUrl={data.musicTrack.spotifyUrl}
         />
       )}
 

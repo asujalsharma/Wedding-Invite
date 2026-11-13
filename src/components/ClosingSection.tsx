@@ -19,8 +19,8 @@ export const ClosingSection: React.FC<Props> = ({
   const handleShare = async () => {
     const url = window.location.href;
     const shareData = {
-      title: `${partnerOne} & ${partnerTwo} Wedding Invitation`,
-      text: `You are cordially invited to celebrate the wedding of ${partnerOne} & ${partnerTwo} on November 25, 2026.`,
+      title: `॥ श्री गणेशाय नमः ॥ ${partnerOne} & ${partnerTwo} Wedding Invitation`,
+      text: `॥ श्री गणेशाय नमः ॥\nYou are cordially invited to celebrate the auspicious wedding ceremony of ${partnerOne} & ${partnerTwo} on Wednesday, November 25, 2026 at Shri Radhey Paradise Marriage Garden, Gwalior (M.P.).\n\nView the bespoke royal animated invitation card:`,
       url
     };
 

@@ -16,9 +16,12 @@ class WeddingMusicManager {
   }
 
   public setCustomUrl(url: string) {
-    this.customUrl = url;
-    if (this.customAudio) {
-      this.customAudio.src = url;
+    if (this.customUrl !== url) {
+      this.customUrl = url;
+      if (this.customAudio) {
+        this.customAudio.src = url;
+        this.customAudio.load();
+      }
     }
   }
 
@@ -40,14 +43,17 @@ class WeddingMusicManager {
         if (!this.customAudio) {
           this.customAudio = new Audio(this.customUrl);
           this.customAudio.loop = true;
-          this.customAudio.volume = 0.5;
+          this.customAudio.volume = 0.6;
+        } else if (this.customAudio.src !== this.customUrl && !this.customAudio.src.endsWith(this.customUrl)) {
+          this.customAudio.src = this.customUrl;
+          this.customAudio.load();
         }
         await this.customAudio.play();
         this.isPlaying = true;
         this.onStateChange?.(true);
         return;
       } catch (e) {
-        console.warn('Custom audio playback failed, falling back to romantic piano synth:', e);
+        console.warn('Custom audio playback failed, falling back to romantic raag synth:', e);
       }
     }
 
